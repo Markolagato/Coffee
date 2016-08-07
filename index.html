@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<h1>Mark's Coffee Brewer</h1>
+	<img id="Coffee" src="images/emptyCoffee.png" alt="emptyCoffee" width="200px" height="200px">
+	<button onclick="drink()">Have a Cup!</button>
+	</head>
+
+	<body>
+		<p id="clockDisp"></p>
+		<p id="brewTime">Brew Time</p>
+		<button id="brewSet" type="button" onclick="brewTime()">Brew Time</button>
+		<P id="coffeePot">Temperature (F)</p>
+		<p id="temperature">0 [deg.]</p>
+
+		<script src="scripts/coffee.js"></script>
+		<script src="scripts/coffeeClock.js"></script>
+		<script>
+		function brewTime(){
+			var timeSetHour = prompt("Input Brew Hour","8");
+			var timeSetMinute = prompt("Input Brew Minute","30");
+			var timeSetAmPm = prompt("Input Brew am/pm","am");
+			brewTimeSet(timeSetHour,timeSetMinute,timeSetAmPm);
+		}
+		</script>
+		<script>
+		var lvl = 0;
+		function drink(){
+			switch(lvl){
+			case 0:
+			break;
+			case 1:
+			document.getElementById("Coffee").src = "images/emptyCoffee.png";
+			lvl = 0;
+			break;
+			case 2:
+			document.getElementById("Coffee").src = "images/oneEightCoffee.png";
+			lvl = 1;
+			break;
+			case 3:
+			document.getElementById("Coffee").src = "images/oneFourCoffee.png";
+			lvl = 2;
+			break;
+			case 4:
+			document.getElementById("Coffee").src = "images/threeEightCoffee.png";
+			lvl = 3;
+			break;
+			case 5:
+			document.getElementById("Coffee").src = "images/halfCoffee.png";
+			lvl = 4;
+			break;
+			case 6:
+			document.getElementById("Coffee").src = "images/fiveEightCoffee.png";
+			lvl = 5;
+			break;
+			case 7:
+			document.getElementById("Coffee").src = "images/threeFourCoffee.png";
+			lvl = 6;
+			break;
+			case 8:
+			document.getElementById("Coffee").src = "images/sevenEightCoffee.png";
+			lvl = 7;
+			break;
+			
+			
+			//idea: in a totally new script do this same concept but with a
+			//universal variable, better scope
+			
+			}
+			
+		}
+			
+		</script>
+	
+	</body>
+</html>
